@@ -1,1 +1,8 @@
-.vercel
+hts-cache/
+hts-log.txt
+node_modules/
+.vercel/
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
