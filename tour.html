@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tour Dates</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+:root {
+  --bg: #0b0b0b;
+  --text: #fff;
+  --muted: #aaa;
+  --btn-bg: #fff;
+  --btn-text: #000;
+}
+.light {
+  --bg: #fff;
+  --text: #000;
+  --muted: #444;
+  --btn-bg: #000;
+  --btn-text: #fff;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+header {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  border-bottom: 1px solid #222;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 {
+  font-size: 20px;
+  margin: 0;
+  letter-spacing: 2px;
+}
+header button {
+  background: none;
+  color: var(--text);
+  border: 1px solid var(--muted);
+  padding: 6px 10px;
+  cursor: pointer;
+}
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 30px 20px;
+}
+.search {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+.tour-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid #222;
+  flex-wrap: wrap;
+}
+.info { flex: 1; }
+.date { font-weight: bold; }
+.city { opacity: 0.8; }
+.venue { font-size: 14px; opacity: 0.6; }
+.ticket-btn {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  padding: 10px 18px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 3px;
+}
+footer {
+  margin-top: 60px;
+  font-size: 12px;
+  opacity: 0.6;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .tour-row { flex-direction: column; align-items: flex-start; }
+  .ticket-btn { margin-top: 12px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>TOUR</h1>
+  <button onclick="toggleTheme()">Theme</button>
+</header>
+
+<div class="container">
+
+<input class="search" placeholder="Search city or venue…" onkeyup="filterTour(this.value)">
+
+<div class="tour-row" data-search="nashville nissan">
+  <div class="info">
+    <div class="date">May 10, 2026</div>
+    <div class="city">Nashville, TN</div>
+    <div class="venue">Nissan Stadium</div>
+  </div>
+  <a href="/tickets/nashville.html" class="ticket-btn" onclick="track('Nashville')">Tickets</a>
+</div>
+
+<div class="tour-row" data-search="dallas att">
+  <div class="info">
+    <div class="date">May 12, 2026</div>
+    <div class="city">Dallas, TX</div>
+    <div class="venue">AT&T Stadium</div>
+  </div>
+  <a href="/tickets/dallas.html" class="ticket-btn" onclick="track('Dallas')">Tickets</a>
+</div>
+
+<div class="tour-row" data-search="los angeles sofi">
+  <div class="info">
+    <div class="date">May 15, 2026</div>
+    <div class="city">Los Angeles, CA</div>
+    <div class="venue">SoFi Stadium</div>
+  </div>
+  <a href="/tickets/la.html" class="ticket-btn" onclick="track('LA')">Tickets</a>
+</div>
+
+<footer>
+Tickets are sold by authorized third-party providers. This site does not sell tickets.
+</footer>
+
+</div>
+
+<script src="/assets/tour.js"></script>
+</body>
+</html>
