@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #0b0b0b;
+  color: #fff;
+  margin: 0;
+}
+
+header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.tour-list {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.tour-date {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr auto;
+  gap: 15px;
+  align-items: center;
+  border-bottom: 1px solid #333;
+  padding: 15px 0;
+}
+
+.ticket-btn {
+  background: #e63946;
+  color: white;
+  padding: 10px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.ticket-btn:hover {
+  background: #ff4d5a;
+}
